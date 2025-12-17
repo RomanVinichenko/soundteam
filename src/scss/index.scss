@@ -69,6 +69,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 5;
   display: flex;
   height: 84px;
   background: rgba(255, 255, 255, 0.05);
@@ -175,9 +176,9 @@ $heights: 15, 49, 89, 33, 49, 85, 81, 29, 15;
 }
 
 @keyframes uptop {
-  0% { transform: translateX(80px); }
-  50% { transform: translateX(0); }
-  100% { transform: translateX(80px); }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+  100% { transform: translateY(0); }
 }
 
 .liqui-wrapper {
