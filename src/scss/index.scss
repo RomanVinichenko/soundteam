@@ -180,7 +180,7 @@ $heights: 15, 49, 89, 33, 49, 85, 81, 29, 15;
   100% { transform: translateX(80px); }
 }
 
-.liquidGlass-wrapper {
+.liqui-wrapper {
   position: absolute;
   border: 1px solid white;
   top: 50%;
@@ -208,6 +208,14 @@ $heights: 15, 49, 89, 33, 49, 85, 81, 29, 15;
   isolation: isolate;
 }
 
+.liqui-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
 .liqui-tint {
   z-index: 1;
   border-radius: 8px;
@@ -215,13 +223,6 @@ $heights: 15, 49, 89, 33, 49, 85, 81, 29, 15;
   inset: 0;
   background: rgba(255, 255, 255, 0.25);
 }
-
-//body {
-//  background: url("https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/flowers.jpg")
-//  center center;
-//  background-size: 500px;
-//  animation: moveBackground 60s linear infinite;
-//}
 
 .liqui-text {
   z-index: 3;
@@ -231,7 +232,7 @@ $heights: 15, 49, 89, 33, 49, 85, 81, 29, 15;
 
 @keyframes moveBackground {
   from {
-    background-position: 0% 0%;
+    background-position: 0 0;
   }
   to {
     background-position: 0% -500%;
