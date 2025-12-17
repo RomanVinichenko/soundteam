@@ -6,8 +6,7 @@
   "scripts": {
     "recreate-dist": "rm -Rf dist",
     "dev": "npm run recreate-dist && parcel -p 3000 --open chrome --no-cache",
-    "build": "npm run recreate-dist && parcel build",
-    "prettier:fix": "prettier --write \"**/*.js\""
+    "build": "npm run recreate-dist && parcel build"
   },
   "browserslist": [
     "last 2 version",
@@ -21,7 +20,6 @@
     "postcss-scss": "^4.0.6",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^1.7.4",
-    "prettier": "^2.8.1",
     "sharp": "^0.31.2"
   }
 }
