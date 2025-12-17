@@ -9,22 +9,6 @@
 1. npm run deploy
 2. open url https://{login GitHub}.github.io/{repository name}/
 
-### For fix styles with Stylelint
-
-.stylelintrc - Stylelint rules</br>
-.stylelintignore - Stylelint ignore
-
-1. npm run stylelint - for see errors
-2. npm run stylelint:fix - for fix errors
-
-for auto fix in VsCode, added this line to settings.json:<br>
-"editor.codeActionsOnSave": {"source.fixAll.stylelint": true}<br>
-
-for see errors in file:
-
-1. VsCode: install stylelint in the app store
-2. IDE from JetBrains: Settings > Stylelint (in search) > tick enable
-
 ### For fix another code with Prettier
 
 .prettierrc.json - Prettier rules
