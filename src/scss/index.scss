@@ -1,3 +1,176 @@
-@import "helpers/mixins";
-@import "helpers/variables";
-@import "core/reset";
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+mark {
+  background-color: transparent;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  background-color: #FBFAF9;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 108px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 84px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(255, 255, 255);
+
+  .menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.decor-left, .decor-right {
+  position: absolute;
+  z-index: -1;
+  width: 644px;
+  height: 644px;
+  filter: blur(200px);
+  border-radius: 50%;
+  background: radial-gradient(
+                  circle,
+                  #D6E6F9 0%,
+                  #D6E6F9 60%,
+                  #FFFFFF 100%
+  );
+}
+
+.decor-left {
+  top: -250px;
+  left: -250px;
+}
+
+.decor-right {
+  bottom: -250px;
+  right: -250px;
+}
+
+$bars: 9;
+$bar-width: 12px;
+$bar-height: 88px;
+$duration: 2.4s;
+$heights: 15, 49, 89, 33, 49, 85, 81, 29, 15;
+
+.loader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  height: $bar-height;
+
+  span {
+    width: $bar-width;
+    border-radius: 12px;
+
+    @for $i from 1 through $bars {
+      &:nth-child(#{$i}) {
+        height: nth($heights, $i) + px;
+      }
+    }
+
+    background: linear-gradient(
+                    to right,
+                    rgba(188, 232, 255, 1) 0%,
+                    rgba(218, 244, 255, 0.94) 49%,
+                    rgba(191, 216, 255, 0.89) 78%,
+                    rgba(164, 188, 255, 0.85) 100%
+    );
+
+    opacity: 0;
+    animation: loading $duration ease-in-out infinite;
+  }
+
+  @for $i from 1 through $bars {
+    span:nth-child(#{$i}) {
+      animation-delay: ($i - 1) * ($duration / ($bars * 2));
+    }
+  }
+}
+
+@keyframes loading {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 1; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
